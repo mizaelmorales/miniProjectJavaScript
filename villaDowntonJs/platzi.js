@@ -11,7 +11,7 @@ for(var i = 0; i < 10;i++)
 	z = aleatorio(10,20);
 	document.write(z + ",");
 }
-
+/*Funcion para soltar numero aletarios en un rango especifico*/
 function aleatorio(min, maxi)
 {
 	var resultado
