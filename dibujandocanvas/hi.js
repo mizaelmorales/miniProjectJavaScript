@@ -1,7 +1,8 @@
 
 var texto= document.getElementById("texto_line);
-	//los eventos son accionadores de funciones que dispara cierto bloque de codigo
+boton = document.getElementById('botoncito');
 boton.addEventListener("click",dibujoPorClick); 
+
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
 var ancho = d.width;
