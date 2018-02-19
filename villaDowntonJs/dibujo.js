@@ -1,11 +1,19 @@
 var vp =document.getElementById('villa');
 var papel= vp.getContext("2d");
 var cantidad= aleatorio(1,10);
+document.addEventListener("keydown", dibujarTeclado);
 /*a la definiciones completas de un objeto se les llama clase
 la variable es una instancia, cuano se tiene la difinicion de un objeto se comienza la primera letra en mayuscula
 
 new es una nueva definicion de objecto
 */
+var teclas = 
+{
+	UP: 38,
+	DOWN: 40,
+	LEFT: 37,
+	RIGHT: 39
+};
 var fondo = {
 	url:"tile.png",
 	cargaOk:false
@@ -30,7 +38,9 @@ vaca.imagen.addEventListener("load", cargarVacas);
 pollo.imagen = new Image ();
 pollo.imagen.src= pollo.url;
 pollo.imagen.addEventListener("load", cargarPollo);
-
+var x = 150;
+var y = 150;
+var movimiento = 10;
 
 /*
 var cerdo= new Image ();
@@ -40,24 +50,60 @@ cerdo.addEventListener("load", CargarCerdo);
 var pollo = new Image ();
 pollo.src= "pollo.png";
 pollo.addEventListener("load", CargarPollo);
+
 */
-function cargarFondo(eve)
+function dibujarTeclado(evento)
+{
+	console.log(evento);
+  // solo se dibujara si esta el click del mouse presionado
+  
+  switch(evento.keyCode)
+	{
+		case teclas.UP:
+		dibujar();
+		papel.drawImage(pollo.imagen, x, y - movimiento);
+		y = y - movimiento;
+		
+		break;
+		case teclas.DOWN:
+		dibujar();
+		papel.drawImage(pollo.imagen, x, y + movimiento);
+		y = y + movimiento;
+		
+		break;
+		case teclas.RIGHT:
+		dibujar();
+		papel.drawImage(pollo.imagen,x + movimiento, y);
+		x = x + movimiento;
+		
+		break;
+		case teclas.LEFT:
+		dibujar();
+		papel.drawImage(pollo.imagen, x - movimiento, y);
+		x = x - movimiento;
+		
+		break;
+		
+	}
+	
+
+}
+function cargarFondo()
 {
 	fondo.cargarOK = true;
+	
 	dibujar();
-	console.log(eve);
 }
-function cargarVacas(e)
+function cargarVacas()
 {
 	vaca.cargarOK = true;
+	
 	dibujar();
-	console.log(e);
 }
-function cargarPollo(evee)
+function cargarPollo()
 {
 	pollo.cargarOK = true;
-	dibujar();
-	console.log(evee);
+		dibujar();
 }
 function dibujar() 
 {
@@ -69,7 +115,7 @@ function dibujar()
 	if(vaca.cargarOK)
 	{	
 	
-	console.log(cantidad);	
+		
 	for(v=0;v < cantidad; v++ )
 		{		
 			var x = aleatorio(0,420);
@@ -80,13 +126,9 @@ function dibujar()
 	}	
 	if(pollo.cargarOK)
 	{
-	console.log(cantidad);	
-	for(v=0;v < cantidad; v++ )
-		{		
-			var x = aleatorio(0,420);
-			var y = aleatorio(0,420);	
-			papel.drawImage(pollo.imagen, x, y);
-		}
+			
+			
+		
 	}
 }
 
