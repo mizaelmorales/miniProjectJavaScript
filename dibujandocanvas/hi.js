@@ -1,7 +1,8 @@
 
-var texto= document.getElementById("texto_lineas");
-var boton= document.getElementById("botoncito");
+var texto= document.getElementById("texto_line);
+boton = document.getElementById('botoncito');
 boton.addEventListener("click",dibujoPorClick); 
+
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
 var ancho = d.width;
