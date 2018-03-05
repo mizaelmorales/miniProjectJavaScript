@@ -31,3 +31,12 @@ function esDivisible(num,divisor) {
 	}
 	// body...
 }
+/*function esDivisible(num,divisor) {
+	resultado =(num % divisor == 0)
+	
+		
+		return resultado;
+	
+}*/
+
+
