@@ -15,4 +15,27 @@ class billetes
  var papeles;
  var div;
  var entregado = [];
+
+
+ for (var a of caja )
+ {
+     if (dinero >= 0 )
+     {
+        div = Math.floor( dinero / a.valor )
+        console.log(a);
+        console.log(a.valor);
+        if (div > a.valor )
+        {
+            papeles = a.cantidad;
+            entregado.push(new billetes(a.valor,papeles));
+            dinero= dinero -(a.valor * papeles);
+        }
+        else
+        {
+            papeles = div;
+            entregado.push(new billetes(a.valor,papeles));
+            dinero= dinero -(a.valor * papeles);
+        }
+     } 
+ }
  
