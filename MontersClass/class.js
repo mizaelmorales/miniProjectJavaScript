@@ -17,6 +17,7 @@ class Monsters
 	/*Declaracion de variables(Atributos)  con this*/
 	constructor(n,v,a)
 	{
+		a=2;
 		this.imagen = new Image();
 		this.nombre=n;
 		this.vida=v;
@@ -34,6 +35,7 @@ de una clase es una funcion
 	}
 	mostrar()
 	{/*appenchild agregar un hijo al body*/
+		b=2;
 		document.body.appendChild(this.imagen);
 		document.write("<p>");
 		document.write("<strong>"+this.nombre+"</strong><br/>");

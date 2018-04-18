@@ -8,7 +8,7 @@ function Multi()
 	for(i=0;i<11;i++)
 	{
 		mul= operacion(x,i);
-		document.write("resultado = " + mul + ", ");
+		document.write("resultado = " + mul + ", "+"<br/>");
 	}
 		
 }
